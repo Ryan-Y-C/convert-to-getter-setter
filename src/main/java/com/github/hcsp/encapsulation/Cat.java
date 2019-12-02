@@ -1,11 +1,17 @@
 package com.github.hcsp.encapsulation;
 
 public class Cat {
-    /** 猫咪的名字 */
+    /**
+     * 猫咪的名字
+     */
     private String name;
-    /** 猫咪的年龄 */
+    /**
+     * 猫咪的年龄
+     */
     private int age;
-    /** 猫咪是否萌，true为萌，false为不萌 */
+    /**
+     * 猫咪是否萌，true为萌，false为不萌
+     */
     private boolean cute;
 
     public String getName() {
@@ -21,7 +27,13 @@ public class Cat {
     }
 
     public void setAge(int age) {
-        this.age = age;
+        if (age < 0) {
+            this.age = 0;
+        } else if (age > 100) {
+            this.age = 100;
+        } else {
+            this.age = age;
+        }
     }
 
     public boolean isCute() {
